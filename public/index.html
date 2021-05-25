@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8" >
+    <title id="titleWeb">ReplaceTitle</title>
+    <link rel="stylesheet" type="text/css" href="./CSS/style.css" />
+</head>
+
+<body onload="ChangeHot()">
+    <div id="serverlogoutresponse" class="serverlogoutresponse"></div>
+    <!-- navigation bar with logo -->
+    <div class="navbar" id="navbar">
+        <div class="alignment">
+            <ul class="topnav">
+                <li><img alt="logo" class="logo" src="./Images/Untitled-1.jpg" /></li>
+                <li>
+                    <button onclick="ChangeHot()" id="hot" class="menu active">
+                        Hot
+                    </button>
+                </li>
+                <li>
+                    <button onclick="ChangeFresh()" id="fresh" class="menu">
+                        Fresh
+                    </button>
+                </li>
+                <li>
+                    <button onclick="ChangeUpload()" id="upload" class="menu" style="display:none;">
+                        Upload
+                    </button>
+                </li>
+                <li class="right">
+                    <button id="myprofile" onclick="ChangeMyProfile()" class="menu" style="display:none;">
+                        MyProfile
+                    </button>
+                </li>
+               
+                <li class="right">
+                    <button onclick="ChangeLogIn()" id="login" class="menu">
+                        LogIn
+                    </button>
+                </li>
+                <li class="right">
+                    <button onclick="logout(),reload()" id="logout" class="menu" style="display:none;">
+                        LogOut
+                    </button>
+                </li>
+                <li class="right">
+                    <button onclick="ChangeRegister()" id="register" class="menu">
+                        Register
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- navigation bar with logo end -->
+
+    <!-- container left side of page occupying 20 % of the website -->
+    <div class="container-left"></div>
+    <!-- container 20% end -->
+
+    <!-- vertical menu left -->
+    <div class="container-category" id="verticalmenu">
+        <h4>Sections:</h4>
+        <ul>
+            <li><button id="hot2" onclick="ChangeHot()" class="left-menu active">Hot</button></li>
+            <li><button id="fresh2" onclick="ChangeFresh()" class="left-menu">Fresh</button></li>
+            <li><button id="school" onclick="changeSchool()" class="left-menu">School</button></li>
+            <li><button id="funny" onclick="changeFunny()" class="left-menu">Funny</button></li>
+            <li><button id="darkhumor" onclick="changeDarkHumor()" class="left-menu">Dark-Humor</button></li>
+            <li><button id="cats" onclick="changeCats()" class="left-menu">Cats</button></li>
+            <li><button id="dogs" onclick="changeDogs()" class="left-menu">Dogs</button></li>
+        </ul>
+    </div>
+    <!-- vertical menu left end -->
+
+    <!-- banner add container -->
+    <div class="banneradd" id="banner">
+        <img alt="Addbanner"
+            src="./Images/stock-vector-tire-car-advertisement-poster-information-store-action-landscape-poster-digital-banner-flyer-1301106034.jpg" />
+    </div>
+    <!-- banner add container end -->
+
+    <!-- space delimeter occupying 20% of the website width -->
+    <div class="container-right"></div>
+    <!-- container 20% end -->
+
+    <!-- comment button po up -->
+
+    <div class="commentWindow" id="commentWindow">
+        <div class="closePopUp" id="closePopUp">
+            <button type="button" onclick="hideCommentWindow()" class="close" id="close"></button>
+        </div>
+        <b>Comments:</b>
+
+        <textarea maxlength="150" id="commentText" class="commentText" placeholder="Comment..." name="Comment" required>
+      </textarea>
+
+        <div class="commentsContainer" id="commentsContainer"></div>
+    </div>
+
+    <!-- comment button pop up end -->
+
+    <div class="post-container" id="post-container">
+        <!-- Right Container with 4 ads -->
+        <div id="rightadds" class="addslistright">
+            <div class="adds1"><img alt="add1" src="./Images/online-advertising.jpg" /></div>
+            <div class="adds2"><img alt="add2" src="./Images/online-advertising.jpg" /></div>
+            <div class="adds3"><img alt="add3" src="./Images/online-advertising.jpg" /></div>
+            <div class="adds4"><img alt="add4" src="./Images/online-advertising.jpg" /></div>
+        </div>
+        <!-- Right Container with 4 ads end -->
+
+        <div class="photos" id="photosFresh"></div>
+        <div class="photos" id="photosHot"></div>
+        <div class="photos" id="photosCats"></div>
+        <div class="photos" id="photosDogs"></div>
+        <div class="photos" id="photosDarkHumour"></div>
+        <div class="photos" id="photosSchool"></div>
+        <div class="photos" id="photosFunny"></div>
+    </div>
+
+    <div class="formpos" id="formedit">
+    </div>
+
+
+    <!-- Register -->
+    <div class="formpos" id="form">
+        <form>
+            <div class="container">
+                <h1>Register</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr />
+
+               <b>Email*</b>
+                <input type="email" placeholder="Enter Email" id="username" required />
+
+                <b>Full Name*</b>
+                <input type="text" placeholder="Enter Full Name" id="fullname" required />
+
+                <b>Gender*</b>
+                <input type="text" placeholder="Enter Gender" id="gender" required />
+
+                <b>Date of Birth*</b>
+                <input type="date" id="dateofbirth" required />
+
+                <b>Password*</b>
+                <input type="password" placeholder="Enter Password" id="password" required />
+
+                <hr />
+
+                <button type="button" onclick="registeruser()" class="registerbtn">
+                    Register
+                </button>
+            </div>
+            <div id="serverresponse"></div>
+
+            <div class="container signin">
+                <p>
+                    Already have an account?
+                    <button onclick="ChangeLogIn()">Sign in</button>.
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <!-- Register end -->
+
+    <!-- LogIn -->
+    <div class="formpos" id="loginform">
+        <form>
+            <div class="container">
+                <h1>LogIn</h1>
+                <p>Please fill in this form to LogIn.</p>
+                <hr />
+
+                <b>Email</b>
+                <input id="usernamelogin" type="email" placeholder="Email" name="Email" required />
+
+                <b>Password</b>
+                <input id="passwordlogin" type="password" placeholder="Enter Password" name="psw" required />
+
+                <hr />
+
+                <div id="serverloginresponse"></div>
+
+                <button type="button" onclick="loginUser(),reload()" class="registerbtn">
+                    LogIn
+                </button>
+            </div>
+
+            <div class="container signin">
+                <p>
+                    Don't have an account?
+                    <button onclick="ChangeRegister()">Register</button>.
+                </p>
+            </div>
+        </form>
+    </div>
+    <!-- Log In End -->
+
+    <!-- Upload -->
+    <div class="formpos" id="uploadform">
+        <form method="post" action="http://localhost:8080/upload" enctype="multipart/form-data" id="myForm">
+            <div class="container">
+                <h1>Upload</h1>
+                <p>Please fill in this form to upload a post.</p>
+                <hr />
+
+                <b>Title*</b>
+                <input type="text" placeholder="Enter Title" id="title" name="title" required />
+
+                <b>Choose Category*</b>
+                <select id="category" name="category">
+                    <option  value="School">School</option>
+                    <option  value="Funny">Funny</option>
+                    <option value="DarkHumor">Dark Humor</option>
+                    <option  value="Cats">Cats</option>
+                    <option  value="Dogs">Dogs</option>
+                </select>
+
+                <b>Select image to upload (Only Mp4,Jpeg,Jpg,Png or Gif Format
+                    accepted):</b>
+                <input type="file" name="filetoupload" id="filetoupload" />
+
+                <hr />
+
+                <button type="submit" onclick="" class="registerbtn">Upload Post</button>
+            </div>
+            <div id="serverresponseupload"></div>
+
+            <div class="container signin">
+                <p>
+                    Already have an account?
+                    <button onclick="ChangeLogIn()">Sign in</button>.
+                </p>
+            </div>
+        </form>
+    </div>
+    <!-- Upload Form End -->
+
+    <!-- Upload Success -->
+
+    <div id="success"></div>
+
+    <!-- Upload Success End -->
+    <script src="./JavaScript/upload.js"></script>
+    <script src="./JavaScript/register.js"></script>
+    <script src="./JavaScript/addtofixpos.js"></script>
+    <script src="./JavaScript/changepage.js"></script>
+    <script src="./JavaScript/login.js"></script>
+    <script src="./JavaScript/logout.js"></script>
+    <script src="./JavaScript/buttons.js"></script>
+    <script src="./JavaScript/register.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function reload() {
+            setTimeout(function () {
+                window.location.replace("http://localhost:8080");
+            }, 4000);
+        }
+
+        
+    </script>
+
+</body>
+
+</html>
